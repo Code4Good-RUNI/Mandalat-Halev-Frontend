@@ -26,17 +26,25 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-dev-client",
-      [
-        "expo-notifications",
-        {
-          "icon": "./assets/notification-icon.png",
-          "color": "#ffffff",
-          "defaultChannel": "default"
-        }
-      ]
+   "plugins": [
+    "expo-dev-client",
+    [
+      "expo-notifications",
+      {
+        "icon": "./assets/notification-icon.png",
+        "color": "#ffffff",
+        "defaultChannel": "default"
+      }
     ],
+    [
+      "@react-native-firebase/app",
+      {
+        "android": {
+          "googleServicesFile": "./google-services.json"
+        }
+      }
+    ]
+  ],
     "extra": {
       "eas": {
         "projectId": "39b41638-7ac9-4eea-bf15-571a1bb13c55"
