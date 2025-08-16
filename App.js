@@ -88,21 +88,22 @@ async function registerForPushNotificationsAsync() {
       Alert.alert('Push Notifications', 'Failed to get push token for push notification!');
       return;
     }
-    
+  
     try {
-      // Use simple method that should work without Firebase
-      console.log('Getting push token...');
-      
-      // For development, we'll create a mock token for testing
-      // In production, you'd normally get a real Expo push token
-      const mockToken = `ExponentPushToken[mock-${Date.now()}-${Math.random().toString(36).substr(2, 9)}]`;
-      
-      console.log('Generated mock token for testing:', mockToken);
-      token = mockToken;
-      
-      // Note: In a real production app, you would use:
-      // token = (await Notifications.getExpoPushTokenAsync()).data;
-      // But this requires proper Firebase setup on Android
+    console.log('Getting real push token...');
+    
+    // Force using project ID method
+    const projectId = Constants?.expoConfig?.extra?.eas?.projectId ?? Constants?.easConfig?.projectId;
+    console.log('Project ID:', projectId);
+    
+    if (projectId) {
+      token = (await Notifications.getExpoPushTokenAsync({ projectId })).data;
+      console.log('Successfully got real push token with project ID:', token);
+    } else {
+      console.log('No project ID found, trying legacy method');
+      token = (await Notifications.getExpoPushTokenAsync()).data;
+      console.log('Successfully got token with legacy method:', token);
+    }
       
     } catch (e) {
       console.error('Error getting push token:', e);

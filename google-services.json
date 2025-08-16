@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:735739332151:android:79a37bafd2d0e79335a1b2",
+        "mobilesdk_app_id": "1:735739332151:android:d0f98b338eecbd4135a1b2",
         "android_client_info": {
-          "package_name": "com.mandalathalev.frontend"
+          "package_name": "com.anonymous.MandalatHalevFrontend"
         }
       },
       "oauth_client": [],

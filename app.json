@@ -26,7 +26,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-   "plugins": [
+  "plugins": [
     "expo-dev-client",
     [
       "expo-notifications",
@@ -36,15 +36,8 @@
         "defaultChannel": "default"
       }
     ],
-    [
-      "@react-native-firebase/app",
-      {
-        "android": {
-          "googleServicesFile": "./google-services.json"
-        }
-      }
-    ]
-  ],
+    "@react-native-firebase/app"
+],
     "extra": {
       "eas": {
         "projectId": "39b41638-7ac9-4eea-bf15-571a1bb13c55"
