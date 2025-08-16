@@ -4,14 +4,19 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "dev-client": "expo start --dev-client",
+    "build:android": "expo run:android"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
     "expo": "~53.0.20",
-    "expo-notifications": "~0.31.4",
+    "expo-constants": "^17.1.7",
+    "expo-dev-client": "~5.2.4",
+    "expo-device": "^7.1.4",
+    "expo-notifications": "^0.31.4",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "0.79.5"
