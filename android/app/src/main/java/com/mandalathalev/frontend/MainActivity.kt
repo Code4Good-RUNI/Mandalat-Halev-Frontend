@@ -1,4 +1,4 @@
-package com.anonymous.MandalatHalevFrontend
+package com.mandalathalev.frontend
 
 import android.os.Build
 import android.os.Bundle

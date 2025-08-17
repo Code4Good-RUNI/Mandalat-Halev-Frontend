@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.MandalatHalevFrontend'
+    namespace 'com.mandalathalev.frontend'
     defaultConfig {
-        applicationId 'com.anonymous.MandalatHalevFrontend'
+        applicationId 'com.mandalathalev.frontend'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -175,3 +175,5 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+apply plugin: 'com.google.gms.google-services'

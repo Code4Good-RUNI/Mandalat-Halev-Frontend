@@ -1,5 +1,14 @@
 {
   "expo": {
+        "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "googleServicesFile": "./google-services.json",
+      "package": "com.mandalathalev.frontend"
+    },
     "name": "Mandalat-Halev-Frontend",
     "slug": "Mandalat-Halev-Frontend",
     "version": "1.0.0",
@@ -15,14 +24,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "package": "com.mandalathalev.frontend"
-    },
+
     "web": {
       "favicon": "./assets/favicon.png"
     },
@@ -31,12 +33,18 @@
     [
       "expo-notifications",
       {
-        "icon": "./assets/notification-icon.png",
         "color": "#ffffff",
         "defaultChannel": "default"
       }
     ],
-    "@react-native-firebase/app"
+    [
+    "@react-native-firebase/app",
+    {
+      "android": {
+        "googleServicesFile": "./google-services.json"
+      }
+    }
+  ]
 ],
     "extra": {
       "eas": {
