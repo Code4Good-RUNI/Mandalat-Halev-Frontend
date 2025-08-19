@@ -120,29 +120,33 @@ async function registerForPushNotificationsAsync() {
 }
 
 // Test push notification function
+// Test push notification function
 async function sendTestNotification() {
   try {
-    const response = await fetch(`${BACKEND_URL}/send-push-notification-test`, {  // ← New endpoint
+    const response = await fetch(`${BACKEND_URL}/send-push-test`, {  // ← Fixed endpoint name
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        token: expoPushToken,
-        title: 'Test Notification',
-        body: 'This is a test notification from Mandalat-Halev app!',
+        contact_id: 'contact-fake-123',  // ← Changed from 'token' to 'contact_id'
+        title: 'Test from App! 🎉',
+        body: 'This is a test notification sent directly from the Mandalat-Halev app!',
       }),
     });
 
     const result = await response.json();
     
     if (response.ok) {
-      Alert.alert('Success', result.message || 'Test notification sent!');
+      Alert.alert('Success! 🎉', result.message || 'Test notification sent!');
+      console.log('✅ Test notification sent successfully:', result);
     } else {
       Alert.alert('Error', `Failed to send notification: ${result.error}`);
+      console.error('❌ Failed to send test notification:', result);
     }
   } catch (error) {
     Alert.alert('Error', `Network error: ${error.message}`);
+    console.error('❌ Network error sending test notification:', error);
   }
 }
 
